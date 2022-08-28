@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>solucion formula cuadratica</title>
+	<script>
+var a,b,c;
+var salidatxt;
+function validar(){
+	a = document.forms["inform"]["terminoA"].value;
+	b = document.forms["inform"]["terminoB"].value;
+	c = document.forms["inform"]["terminoC"].value;
+
+	if(a == 0){
+		salidatxt = "<em>a</em> no puede ser igual a 0";
+	} else if (isNaN(a)){
+		salidatxt= "<em>a</em> debe ser un numero";
+	}else if (isNaN(b)){
+		salidatxt= "<em>a</em> debe ser un numero";
+	}else if (isNaN(c)){
+		salidatxt= "<em>a</em> debe ser un numero";
+	} else {
+		var x1 = (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+		var x2 = (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+		salidatxt = "la ecuacion cuadratica para x los valores son <strong>" + x1 + "</strong> o <strong>" + x2 + "</strong>";
+	}
+ 
+
+	document.getElementById("txt_salida").innerHTML = salidatxt;
+}
+	</script>
+</head>
+<body>
+
+ <p>porfavor ingrese los coeficientes <strong>a</strong> , <strong>b</strong> y <strong>c</strong> de la siguiente formula cuadratica</p>
+
+ <form name ="inform" action="javascript:validar();">
+ 	a: <input type="text" name="terminoA" size="5" required>	
+ 	b: <input type="text" name="terminoB" size="5" required>	
+ 	c: <input type="text" name="terminoC" size="5" required>	
+ 	<br> <br><br><input type="submit" value="calcular">
+ </form>
+
+ <p id="txt_salida"/>
+  <script src="p5.js"></script>
+    <script src="my-first-sketch.js"></script>
+</body>
+</html>
